@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- COVER -->
+    <div class="cover" id="cover">
+        <div class="cover-content">
+            <h1>Budi & Lestari</h1>
+
+            <p class="kepada">Kepada Yth:</p>
+            <p id="guestName" class="guest-name">
+                Tamu Undangan
+            </p>
+            <button class="open-btn" onclick="openInvitation()">
+                Buka Undangan
+            </button>
+        </div>
+    </div>
+
+    <!-- BACKGROUND MUSIC -->
+    <audio id="bgMusic" loop>
+        <source src="islami.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">
+        🎵
+    </button>
+
+    <!-- COUPLE -->
+    <section id="couple">
+        <h2>Mempelai</h2>
+
+        <div class="couple-container">
+            <div class="couple-card">
+            <img src="https://i.pinimg.com/736x/e9/6e/d8/e96ed8aee365c7eb1b3b253d33112980.jpg" alt="">
+            <h3>Budi Santoso</h3>
+            <p>Putra dari Bapak Suharto & Ibu Sumiati</p>
+        </div>
+
+        <div class="couple-card">
+        <img src="https://i.pinimg.com/736x/7c/36/b0/7c36b036746763ac23574a6d0ee5d481.jpg" alt="">
+        <h3>Lestari Wulandari</h3>
+        <p>Putri dari Bapak Bambang & Ibu Siti</p>
+        </div>
+        </div>
+
+        <button class="lihat-btn" onclick="openDoor()">Lihat Acara</button>
+
+    </section>
+
+    <!-- DOOR -->
+    <div class="door-overlay" id="doorOverlay">
+        <div class="door left"></div>
+        <div class="door right"></div>
+    </div>
+
+    <!-- EVENT -->
+    <section id="event">
+        <h2>Informasi Acara</h2>
+
+        <div class="event-card">
+            <h3>Akad Nikah</h3>
+            <p>15 Juni 2026</p>
+            <p>08:00 WIB</p>
+            <p>Masjid Al Ikhlas</p>
+        </div>
+
+        <div class="event-card">
+            <h3>Resepsi</h3>
+            <p>15 Juni 2026</p>
+            <p>11:00 WIB</p>
+            <p>Gedung Graha Wisata</p>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN SECTION -->
+    <section id="countdown">
+        <h2 class="section-title">Menuju Hari Bahagia</h2>
+
+        <div class="countdown-container">
+            <div class="count-box">
+                <span id="days">00</span>
+                <small>Hari</small>
+            </div>
+            <div class="count-box">
+                <span id="hours">00</span>
+                <small>Jam</small>
+            </div>
+            <div class="count-box">
+                <span id="minutes">00</span>
+                <small>Menit</small>
+            </div>
+            <div class="count-box">
+                <span id="seconds">00</span>
+                <small>Detik</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY TIME -->
+    <section id="story">
+        <h2 class="section-title">Our Love Story</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Awal Bertemu</h3>
+                    <span>2019</span>
+                    <p>
+                        Kami pertama kali bertemu dalam sebuah acara kampus.
+                        Tidak ada yang menyangka pertemuan sederhana itu
+                        menjadi awal perjalanan cinta kami.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Mulai Dekat</h3>
+                    <span>2020</span>
+                    <p>
+                        Komunikasi yang intens membuat kami semakin dekat.
+                        Saling mendukung dalam suka dan duka.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Lamaran</h3>
+                    <span>2024</span>
+                    <p>
+                        Dengan penuh keyakinan dan cinta,
+                        kami memutuskan melangkah ke jenjang yang lebih serius.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Menuju Hari Bahagia</h3>
+                    <span>2026</span>
+                    <p>
+                        Kini kami siap mengikat janji suci
+                        dalam pernikahan yang penuh berkah.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= GIFT SECTION ================= -->
+    <section id="gift">
+        <h2 class="section-title">Kirim Hadiah</h2>
+        <p class="gift-subtitle">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Jika memberi adalah ungkapan tanda kasih, Anda dapat memberi kado secara cashless.</p>
+
+        <div class="gift-container">
+
+            <!-- Bank BCA -->
+            <div class="gift-card">
+                <div class="bank-logo">BCA</div>
+                <h3>Bank Central Asia</h3>
+                <p class="account-number" id="bcaNumber">1234567890</p>
+                <p class="account-name">a.n. Budi Santoso</p>
+                <button onclick="copyRek('1234567890')">Salin Rekening</button>
+            </div>
+
+            <!-- Bank Mandiri -->
+            <div class="gift-card">
+                <div class="bank-logo">MANDIRI</div>
+                <h3>Bank Mandiri</h3>
+                <p class="account-number" id="mandiriNumber">0987654321</p>
+                <p class="account-name">a.n. Lestari Wulandari</p>
+                <button onclick="copyRek('0987654321')">Salin Rekening</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= RSVP SECTION ================= -->
+    <section id="rsvp">
+        <h2 class="section-title">Konfirmasi Kehadiran</h2>
+        <p class="rsvp-subtitle">Mohon konfirmasi kehadiran Anda</p>
+
+        <form id="rsvpForm" class="rsvp-form">
+
+            <input type="text" id="rsvpName" placeholder="Nama Lengkap" required>
+
+            <select id="rsvpStatus" required>
+                <option value="">Konfirmasi Kehadiran</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+
+            <select id="rsvpGuests" required>
+                <option value="">Jumlah Tamu</option>
+                <option value="1">1 Orang</option>
+                <option value="2">2 Orang</option>
+                <option value="3">3 Orang</option>
+                <option value="4">4 Orang</option>
+            </select>
+
+            <textarea id="rsvpMessage" placeholder="Ucapan & Doa"></textarea>
+
+            <button type="submit">💬 Kirim via WhatsApp</button>
+
+        </form>
+    </section>
+
+    <!-- ================= MINI FOOTER ================= -->
+    <footer class="mini-footer">
+        © 2024 Budi & Lestari • Made with B&L Invitation 💖
+    </footer>
+
+<script>
+
+/* OPEN COVER CINEMATIC */
+function openInvitation(){
+const cover=document.getElementById("cover");
+cover.classList.add("animate-out");
+
+setTimeout(()=>{
+cover.style.display="none";
+document.getElementById("couple").classList.add("show");
+},1100);
+}
+
+/* DOOR CINEMATIC */
+function openDoor(){
+const overlay=document.getElementById("doorOverlay");
+overlay.style.display="block";
+
+setTimeout(()=>{
+overlay.classList.add("open");
+},100);
+
+setTimeout(()=>{
+overlay.style.display="none";
+const event=document.getElementById("event");
+event.style.display="block";
+
+setTimeout(()=>{
+event.classList.add("show");
+},50);
+
+document.body.style.overflow="auto";
+window.scrollTo({top:event.offsetTop,behavior:"smooth"});
+},1700);
+}
+
+/* ================= COUNTDOWN ================= */
+
+// Ganti tanggal sesuai acara kamu
+const weddingDate = new Date("June 15, 2026 08:00:00").getTime();
+
+function updateCountdown(){
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if(distance < 0){
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = String(days).padStart(2,'0');
+    document.getElementById("hours").innerText = String(hours).padStart(2,'0');
+    document.getElementById("minutes").innerText = String(minutes).padStart(2,'0');
+    document.getElementById("seconds").innerText = String(seconds).padStart(2,'0');
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+/* Animasi muncul saat scroll */
+window.addEventListener("scroll",function(){
+    const countdown = document.getElementById("countdown");
+    const position = countdown.getBoundingClientRect().top;
+    const screen = window.innerHeight;
+
+    if(position < screen - 100){
+        countdown.classList.add("show");
+    }
+});
+/* ================= STORY ANIMATION ================= */
+
+const storyItems = document.querySelectorAll(".timeline-item");
+
+window.addEventListener("scroll", function(){
+    storyItems.forEach(item => {
+        const position = item.getBoundingClientRect().top;
+        const screen = window.innerHeight;
+
+        if(position < screen - 100){
+            item.classList.add("show");
+        }
+    });
+});
+function copyRek(number){
+    navigator.clipboard.writeText(number).then(()=>{
+        alert("Nomor rekening berhasil disalin!");
+    }).catch(()=>{
+        alert("Gagal menyalin nomor.");
+    });
+}
+document.getElementById("rsvpForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("rsvpName").value.trim();
+    const status = document.getElementById("rsvpStatus").value;
+    const guests = document.getElementById("rsvpGuests").value;
+    const message = document.getElementById("rsvpMessage").value.trim();
+
+    if(!name || !status || !guests){
+        alert("Mohon lengkapi data terlebih dahulu.");
+        return;
+    }
+
+    const whatsappNumber = "6281234567890"; // GANTI dengan nomor kamu
+
+    const text = `
+
+Nama: ${name}
+Konfirmasi: ${status}
+Jumlah Tamu: ${guests}
+Ucapan: ${message}
+
+Terima kasih 🙏
+    `;
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank");
+});
+
+/* OPEN COVER CINEMATIC + PLAY MUSIC */
+const bgMusic = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
+
+function openInvitation(){
+    const cover=document.getElementById("cover");
+    cover.classList.add("animate-out");
+
+    // PLAY MUSIC
+    bgMusic.volume = 0.6;
+    bgMusic.play().then(()=>{
+        musicToggle.classList.add("playing");
+    }).catch(err=>{
+        console.log("Autoplay blocked:", err);
+    });
+
+    setTimeout(()=>{
+        cover.style.display="none";
+        document.getElementById("couple").classList.add("show");
+    },1100);
+}
+
+</script>
+
+</body>
+</html>
