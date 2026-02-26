@@ -368,6 +368,17 @@ function openInvitation(){
         document.getElementById("couple").classList.add("show");
     },1100);
 }
+// Ambil nama tamu dari URL
+function getGuestName() {
+    const params = new URLSearchParams(window.location.search);
+    const guest = params.get("to"); // ambil parameter ?to=
+
+    if(guest){
+        document.getElementById("guestName").innerText = decodeURIComponent(guest);
+    }
+}
+
+getGuestName();
 
 </script>
 
